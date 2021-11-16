@@ -1,0 +1,10 @@
+<div class="todos">
+    <form (submit)="addTodo()">
+        <input type="text" name="inputTodo" placeholder="Ingrese la tarea" class="todo-input" [(ngModel)]="inputTodo" />
+        <input class="todo-submit" type="submit" value="Agregar"/>
+    </form>
+    <div *ngFor="let todo of todos;let i = index;" class="todo {{(todo.completed ? 'done' : '')}}">
+        <div class="id">{{i}}</div>
+        <div class="content" (click)="toggleDone(i)">{{todo.content}}</div>
+    </div>
+</div>
